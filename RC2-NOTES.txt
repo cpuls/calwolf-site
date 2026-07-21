@@ -1,0 +1,27 @@
+CALWOLF RC2 — RELEASE NOTES
+
+Responsive / mobile
+- Added a compact, accessible hamburger navigation below 760px.
+- Improved mobile hero overlays, image positioning, button stacking and tap targets.
+- Refined card, profile, map and footer layouts for narrow phones and tablets.
+- Added a keyboard-accessible “Skip to content” link.
+
+Performance
+- Added optimized WebP versions of all three local hero photographs with JPEG fallbacks.
+- Added hero-image preloading and image decoding/loading hints.
+- Added explicit image dimensions to reduce layout shift.
+- Added DNS prefetch/preconnect for the externally hosted CDFW map.
+- Consolidated shared behavior into a small deferred site.js file.
+
+Favicon / app icons
+- Added SVG, ICO, 16px, 32px, Apple touch, Android and maskable icons.
+- Added a web app manifest and matching browser theme color.
+
+SEO / sharing
+- Added unique titles and descriptions, canonical URLs, robots directives and structured data.
+- Added Open Graph and Twitter sharing metadata plus a 1200×630 social image.
+- Added sitemap.xml, robots.txt and a branded 404 page.
+- Added CNAME and .nojekyll files for GitHub Pages using californiawolf.org.
+
+Primary canonical domain: https://californiawolf.org
+The secondary calwolf.org domain should redirect to the primary domain at the DNS/registrar level.
