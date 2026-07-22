@@ -1,0 +1,8 @@
+CalWolf v1.1
+
+Changes:
+- Added feedback form to About page using Formspree endpoint xjgnozld.
+- Added Instagram callout on About page.
+- Added Follow @calwolforg link in footer on all main pages.
+- Added Instagram profile to structured data.
+- Added accessible inline success/error feedback for form submissions.

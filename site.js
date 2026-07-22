@@ -49,4 +49,57 @@
       });
     }
   });
+
+  var feedbackForm = document.querySelector('[data-formspree]');
+  if (feedbackForm && window.fetch) {
+    var formStatus = feedbackForm.querySelector('.form-status');
+    var submitButton = feedbackForm.querySelector('button[type="submit"]');
+    var defaultButtonText = submitButton ? submitButton.textContent : '';
+
+    feedbackForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!feedbackForm.reportValidity()) return;
+
+      if (formStatus) {
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+      }
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+      }
+
+      fetch(feedbackForm.action, {
+        method: 'POST',
+        body: new FormData(feedbackForm),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (!response.ok) {
+          return response.json().catch(function () { return {}; }).then(function (data) {
+            var message = 'We could not send your feedback. Please try again.';
+            if (data && data.errors && data.errors.length) {
+              message = data.errors.map(function (item) { return item.message; }).join(' ');
+            }
+            throw new Error(message);
+          });
+        }
+        feedbackForm.reset();
+        if (formStatus) {
+          formStatus.className = 'form-status success';
+          formStatus.textContent = 'Thanks—your feedback has been sent.';
+        }
+      }).catch(function (error) {
+        if (formStatus) {
+          formStatus.className = 'form-status error';
+          formStatus.textContent = error.message || 'We could not send your feedback. Please try again.';
+        }
+      }).finally(function () {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = defaultButtonText;
+        }
+      });
+    });
+  }
+
 })();

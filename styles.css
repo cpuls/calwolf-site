@@ -622,3 +622,91 @@ img{height:auto}
   .metric{font-size:2.55rem}
   .footer-nav{grid-template-columns:1fr}
 }
+
+
+/* v1.1: Instagram and feedback */
+.footer-social{margin-top:20px}
+.instagram-link{
+  width:fit-content;
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  padding:10px 13px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:14px;
+  background:rgba(255,255,255,.045);
+  color:#d9e0da;
+  text-decoration:none;
+  transition:background-color var(--transition),border-color var(--transition),transform var(--transition);
+}
+.instagram-link:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.3);
+}
+.instagram-icon{width:25px;height:25px;flex:0 0 auto}
+.instagram-link span{display:flex;flex-direction:column;line-height:1.25}
+.instagram-link strong{color:#fff;font-size:.82rem}
+.instagram-link small{margin-top:2px;color:#9eaba1;font-size:.72rem}
+
+.about-connect{margin-top:64px;padding-top:56px;border-top:1px solid #d8d1c5}
+.about-connect-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:start}
+.connect-card{
+  min-height:100%;
+  padding:30px;
+  background:#fff;
+  border:1px solid var(--paper-line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-soft);
+}
+.connect-card h2{margin-bottom:14px;font-size:clamp(2rem,4vw,3rem)}
+.connect-card>p:not(.eyebrow){color:var(--muted)}
+.instagram-card{
+  background:linear-gradient(145deg,#243b30 0%,#18231d 100%);
+  color:#fff;
+  border-color:rgba(255,255,255,.12);
+}
+.instagram-card .eyebrow{color:#b9c9bc}
+.instagram-card>p:not(.eyebrow){color:#d6ddd7}
+.instagram-button{margin-top:14px;background:var(--sand)!important;color:#223126!important}
+.button-icon{width:20px;height:20px;flex:0 0 auto}
+.feedback-form{margin-top:24px}
+.form-field{margin-bottom:18px}
+.form-field label{display:block;margin-bottom:7px;color:#263027;font-size:.86rem;font-weight:800}
+.form-field label span{color:#7b857d;font-size:.76rem;font-weight:600}
+.form-field input,.form-field textarea{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #cfc7ba;
+  border-radius:11px;
+  background:#fbf9f4;
+  color:#202820;
+  font:inherit;
+  line-height:1.45;
+  transition:border-color var(--transition),box-shadow var(--transition),background-color var(--transition);
+}
+.form-field textarea{min-height:155px;resize:vertical}
+.form-field input:focus,.form-field textarea:focus{
+  outline:none;
+  border-color:var(--forest);
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(49,91,70,.14);
+}
+.field-note{margin:6px 0 0;color:#7a847c;font-size:.74rem}
+.form-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.feedback-submit[disabled]{opacity:.68;cursor:wait;transform:none}
+.form-status{min-height:1.5em;margin:13px 0 0;color:#59665d;font-size:.84rem;font-weight:700}
+.form-status.success{color:#25623e}
+.form-status.error{color:#9b3030}
+
+@media(max-width:820px){
+  .about-connect-grid{grid-template-columns:1fr}
+  .instagram-card{order:2}
+  .feedback-card{order:1}
+}
+
+@media(max-width:520px){
+  .about-connect{margin-top:48px;padding-top:44px}
+  .connect-card{padding:24px}
+  .instagram-link{width:100%;max-width:330px}
+}
