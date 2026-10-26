@@ -173,7 +173,7 @@ a:focus-visible,.button:focus-visible{
   background-image:linear-gradient(90deg,rgba(16,28,21,.90) 0%,rgba(16,28,21,.60) 45%,rgba(16,28,21,.10) 100%),image-set(url('images/hero-packs.webp') type('image/webp'), url('images/hero-packs.jpg') type('image/jpeg'));
 }
 .page-hero.map-hero{
-  background-image:linear-gradient(90deg,rgba(16,28,21,.92) 0%,rgba(16,28,21,.68) 56%,rgba(16,28,21,.25) 100%),url('https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=244017');
+  background-image:linear-gradient(90deg,rgba(16,28,21,.92) 0%,rgba(16,28,21,.68) 56%,rgba(16,28,21,.25) 100%),url('images/wolf-activity-october-2026.jpg');
 }
 .hero-inner{
   width:min(var(--max-width),100%);
